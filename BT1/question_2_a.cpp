@@ -1,33 +1,43 @@
 #include <stdio.h>
-#include <unistd.h>
+
 double myCubeRoot(double y)
 {
-	double x, l, r;
-	if(y > l)
-		r = y;
+	double mid, left, right;
+	left = 0;
+	if(y>1)
+	{
+		right = y;
+	}
 	else
-		r = l;
-	l = 0;
+	{
+		right = 1;
+	}
+
 	do
 	{
-		x = (l + r)/2;
-		if(x*x*x > y)
+		mid = (left + right)/2;
+		if(mid*mid*mid > y)
 		{
-			r = x;
+			right = mid;
 		}
 		else
 		{
-			l = x;
+			left = mid;
 		}	
 	}
-	while((r-l)/r>0.0000001);
+	while((right -left)/right>0.0000001);
 	
-	return x;	
+	return mid;	
 }
 
 int main()
 {
-	double m = myCubeRoot(8);
-	printf("%f", m);
+	for(int i = 1; i < 10; i++){
+		double x = 0.1*i;
+		double k = x*x*x;
+		double m = myCubeRoot(k);
+		printf("%f\t%f\n", k, m);
+	}
+	
 	return 0;	
 }

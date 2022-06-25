@@ -5,7 +5,10 @@ double absoluteValue(double x){
 }
 
 int main(){
-	for(int i = -5; i<5; i++)
-		printf("%f\t", absoluteValue(i));
+	double x;
+	printf("Please enter a number: ");
+	scanf("%lf", &x);
+	double y = absoluteValue(x);
+	printf("The absolute value of %f is  %f", x, y);
 	return 0;
 }

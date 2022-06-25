@@ -5,7 +5,10 @@ int sign(double x){
 }
 
 int main(){
-	for(int i = -5; i<5; i++)
-		printf("%d\n", sign(i));
+	double x;
+	printf("Please enter a number: ");
+	scanf("%lf", &x);
+	int y = sign(x);
+	printf("\nsign(%f) =  %d", x, y);
 	return 0;
 }

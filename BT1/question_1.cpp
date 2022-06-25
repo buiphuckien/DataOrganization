@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Dùng để in các phần tử ở giữa của mãng, phần tử có 2 chữ số thì thêm số 0 ở trước, phần tử có 1 chữ số thì thêm 00 ở trước.
 void printThreeDigits(int x)
 {
 	if(x >= 100)
@@ -15,7 +16,9 @@ void printThreeDigits(int x)
 			printf("00%d", x);
 		}
 }
-int outPutIntegerWithComma(int x)
+
+// Xuất số nguyên với các dấu phẩy
+void outPutIntegerWithComma(int x)
 {
 	int a[10];
 	int count = 0;
@@ -25,18 +28,26 @@ int outPutIntegerWithComma(int x)
 		count++;
 		x = x/1000;
 	}
+	//In phần tử đầu
 	printf("%d, ", a[count-1]);
+
+	//In các phần tử ở giữa
 	for(int i = count-2; i>0; i--)
 	{
 		printThreeDigits(a[i]);
 		printf(", ");
 	
 	}
+
+	//In phần tử cuối
 	printThreeDigits(a[0]);	
 }
 
 int main()
 {
-	outPutIntegerWithComma(100000003);
+	int x;
+	printf("Please enter an integer: ");
+	scanf("%d", &x);
+	outPutIntegerWithComma(x);
 	return 0;
 }

@@ -46,7 +46,10 @@ double evaluateThePolynomial(double x){
 }
 
 int main(){
-	for(int i = -5; i<5; i++)
-		printf("%f\t", evaluateThePolynomial(i));
+	double x;
+	printf("Please enter a number: ");
+	scanf("%lf", &x);
+	double y = evaluateThePolynomial(x);
+	printf("\nThe value of the polynomial is %f",y);
 	return 0;
 }
